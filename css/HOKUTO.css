@@ -1,0 +1,1265 @@
+@charset "utf-8";
+*{
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family:"游ゴシック体","Yu Gothic",YuGothic,"ヒラギノ角ゴ Pro","Hiragino Kaku Gothic Pro","メイリオ",Meiryo,sans-serif;
+    color: #fff;
+}
+#wrapper {
+    position: absolute;
+    width: 100%;
+}
+
+ 
+ video{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -10;
+    width:100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+
+
+/* グローバルナビ */
+#wrapper nav {
+    position: fixed;
+    top: 0;
+    right: -300px;
+    width: 300px;
+    height: 100%;
+    padding-top: 50px;
+    background: rgba(33,33,33,.9);
+    font-size: 16px;
+    box-sizing: border-box;
+    z-index: 2
+}
+
+#wrapper nav ul li {
+    padding: 20px 28px
+}
+
+#wrapper nav ul li a {
+    text-decoration: none;
+    color: #fff;
+}
+
+#wrapper .btn-gnavi {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 30px;
+    height: 24px;
+    z-index: 3;
+    box-sizing: border-box;
+    cursor: pointer;
+    -webkit-transition: all 400ms;
+    transition: all 400ms
+}
+
+#wrapper .btn-gnavi span {
+    position: absolute;
+    width: 30px;
+    height: 4px;
+    background: #fff;
+    border-radius: 10px;
+    -webkit-transition: all 400ms;
+    transition: all 400ms
+}
+
+#wrapper .btn-gnavi span:nth-child(1) {
+    top: 0
+}
+
+#wrapper .btn-gnavi span:nth-child(2) {
+    top: 10px
+}
+
+#wrapper .btn-gnavi span:nth-child(3) {
+    top: 20px
+}
+
+#wrapper .btn-gnavi.open {
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg)
+}
+
+#wrapper .btn-gnavi.open span {
+    background: #fff
+}
+
+#wrapper .btn-gnavi.open span:nth-child(1) {
+    width: 24px;
+    -webkit-transform: translate(-7px,17px) rotate(45deg);
+    transform: translate(-7px,17px) rotate(45deg)
+}
+
+#wrapper .btn-gnavi.open span:nth-child(3) {
+    width: 24px;
+    -webkit-transform: translate(-7px,-17px) rotate(-45deg);
+    transform: translate(-7px,-17px) rotate(-45deg)
+}
+
+
+
+
+
+/*スライドショー*/
+#wrapper .slider {
+    position: relative;
+    width: 640px;
+    margin: 0 auto 20px;
+    padding: 0 20px;
+}
+
+    #wrapper .slider .slider-inner {
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 480px
+    }
+
+    #wrapper .slider .slider-inner li {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+        -webkit-transition: all 600ms;
+        transition: all 600ms;
+        pointer-events: none
+    }
+
+    #wrapper .slider .slider-inner li.show {
+        opacity: 1;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+        z-index: 1;
+        pointer-events: auto
+    }
+
+    #wrapper .slider .slider-inner li img {
+        width: 100%;
+        height: auto
+    }
+
+    #wrapper .slider .nav {
+        width: 100%;
+        text-align: center;
+        font-size: 0;
+        background: #000
+    }
+
+    #wrapper .slider .nav li {
+        display: inline-block;
+        width: 25%;
+        height: 100px;
+        background: #ddd;
+        cursor: pointer;
+        background-position: center;
+        background-size: cover;
+        box-sizing: border-box;
+        -webkit-transition: opacity 400ms;
+        transition: opacity 400ms;
+        opacity: .5;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)"
+    }
+
+    #wrapper .slider .nav li:hover,#wrapper .slider .nav li.current {
+        opacity: 1;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)"
+    }
+
+    #wrapper .slider .arrow {        
+        position: absolute;
+        top: 30%;
+        font-size: 20px;
+        cursor: pointer;
+        width: 60px;
+        height: 60px;
+        background: #000;
+        color: #fff;
+        line-height: 40px;
+        padding: 5px;
+        -webkit-transition: opacity 400ms;
+        transition: opacity 400ms;
+        border-radius: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #wrapper .slider .arrow:hover {
+        opacity: .7;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)"
+    }
+
+    #wrapper .slider .arrow#arrow-prev {
+        left: 0!important;
+        -webkit-transform: translate(-100%,-50%)!important;
+        transform: translate(-100%,-50%)!important
+    }
+
+    #wrapper .slider .arrow#arrow-next {
+        left: auto!important;
+        right: 0!important;
+        -webkit-transform: translate(100%,-50%)!important;
+        transform: translate(100%,-50%)!important
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*コンテンツエリア*/
+ #section01, #section02 ,#section03,#section04,#section05,#section06,#section07{
+      height: 100vh;
+    
+      
+}
+
+#wrapper .contents section h1,
+#wrapper .contents section h2
+{
+    text-align: center;
+}
+
+#wrapper .contents section h1 {
+    font-size: 100px;   
+}
+
+#wrapper .contents section h2 {
+    font-size: 60px;
+    margin-top: 30%;
+    margin-bottom: 5%;
+}
+
+
+
+/*header*/
+.icon{
+    width: 4.5%;
+    top: 0;
+    left: 0;
+    position: absolute;
+}
+
+/*section01*/
+#section01 .sectioin-inner  {
+  position: relative;
+   
+}
+
+.span{
+    position: relative;   
+    top: 0;
+    text-align: center;
+}
+
+img[src="images/slider/IMG_00.jpg"]{
+    border-radius: 50%;
+    width: 20%;
+    position: absolute;
+    top: 40%;
+    left: 40%;
+    box-shadow: 5px 5px 10px  black;
+}
+
+
+
+
+/*section02*/
+
+#ABOUT-inner{
+    text-align: center;
+    margin-top: 10%;
+}
+
+#ABOUT-text{
+    font-size: 20px;
+    line-height: 50px;
+    text-align: left;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%; 
+}
+
+
+
+
+
+/*sectin03*/
+#Research-Activity-inner{
+    text-align: center;
+    margin-top: 10%;
+}
+#Research-Activity-text{
+    font-size: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+
+.business-plan{
+  text-align: center;
+  margin-top:10%;
+}
+
+.food-professor{
+    width:250px;
+}
+
+
+
+
+/*section04*/
+.wrapper-card{
+    text-align: center; 
+}
+
+.card{
+  width: 12%;
+height: 12%;  
+margin-left: 5%;
+margin-right: 5%;
+filter: drop-shadow(1px 1px 3px #fff);
+}
+
+
+
+
+/*section06*/
+.portfolio-inner{
+  
+}
+.concept-card img{
+    width: 20%;
+    height: auto;
+    float: left;
+    margin-left: 300px;
+    margin-top: 100px;
+    border-radius: 5px;
+    box-shadow: 10px 10px 20px  black;
+}
+
+.portfolio-site img{
+    width: 30%;
+    height: auto;
+    display: flex;
+    float: right;
+    margin-right: 250px;
+    margin-top: 20px;
+    border-radius: 5px;
+    box-shadow: 10px 10px 20px  black; 
+}
+
+/*section07*/
+p.contact-text{
+   font-size: 20px;
+    margin-left: 600px;
+    margin-top: 200px;
+  
+
+   
+}
+
+
+
+/*footer*/
+.footer{
+    height:60px;
+    padding-top: 20px;
+}
+
+.footer-left{
+    float: left;
+}
+
+.footer-right{
+    float: right;
+    padding-top: 40px;
+}
+
+.footer-left p{
+    margin-bottom: 8px;
+    color: #fff;
+}
+
+.footer-right p{
+    color: #fff;
+}
+
+
+
+
+
+/*他*/
+#wrapper .contents section#section01 .section-inner {
+    position: relative;
+    top: 50%;
+    -webkit-transform: translate(0,-50%);
+    transform: translate(0,-50%)
+}
+
+#wrapper .contents section a {
+    color: #fff
+}
+
+/*hover*/
+
+.top:hover{
+     opacity: 0.5;
+    transition: 0.5s;
+}
+
+.food:hover{
+   
+    opacity: 0.5;
+    transition: 0.5s;
+}
+
+.concept-card01:hover{
+     opacity: 0.5;
+    transition: 0.5s;
+    
+}
+
+.portfolio-site01:hover{
+     opacity: 0.5;
+    transition: 0.5s;
+    
+}
+
+.portfolio-site02:hover{
+     opacity: 0.5;
+    transition: 0.5s;
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*ipad用のcss*/
+@media(max-width: 1279px){
+ #wrapper {
+    position: absolute;
+    width: 100%; 
+    }
+    
+    
+    #section01, #section02 ,#section03,#section04,#section05,#section06,#section07{
+      text-align: center;
+      margin-top: 50%;
+      margin-bottom: 150%;
+    
+       
+}
+
+
+
+#wrapper .contents section h1 {
+    font-size: 80px;
+    
+   
+}
+
+#wrapper .contents section h2 {
+    margin-top: 50%;
+}
+    
+    
+
+/*header*/
+.icon{
+    width: 10%;
+}
+
+/*section01*/
+img[src="images/slider/IMG_00.jpg"]{
+    width: 25%;
+    top: 45%;
+    left: 40%;
+}
+
+
+
+
+/*section02*/
+#ABOUT-inner{
+    margin-top: 30%;
+    text-align: center;
+    
+}
+
+#ABOUT-text{
+    width: 60%; 
+    
+}
+
+
+
+
+
+/*sectin03*/
+#Research-Activity-inner{
+    margin-top: 20%;
+}
+#Research-Activity-text{
+    font-size: 20px;
+    text-align: start;
+    width: 90%;
+}
+
+.business-plan{
+  margin-top:30%;
+}
+
+
+
+
+
+
+/*section04*/
+.wrapper-card{
+    margin-top: 20%;
+}
+
+.card{
+  width: 13%;
+}
+
+/*section05*/
+ #wrapper .slider {
+    width: 450px;
+    text-align: center;
+}   
+    
+#wrapper .slider .arrow {        
+        top: 25%;
+}
+     
+
+/*section06*/
+.portfolio-inner{
+  margin-top: 25%;
+margin-left: auto;
+    margin-right: auto;
+}
+.concept-card img{
+    width: 40%;
+    margin-left: 10%;
+    margin-top: 10%;
+}
+
+.portfolio-site img{
+    width: 40%;
+    margin-right: 2%;
+    margin-top: 10%;
+}
+
+/*section07*/
+p.contact-text{
+   margin-left:auto;
+   margin-right: auto;
+    margin-top: 50%;  
+} 
+    
+}
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*タブレット用のcss(小)*/
+@media(max-width: 999px){
+ #wrapper {
+    position: absolute;
+    width: 100%; 
+    }
+    
+    
+    #section01, #section02 ,#section03,#section04,#section05,#section06,#section07{
+      text-align: center;
+      margin-top: 50%;
+      margin-bottom: 150%;
+    
+       
+}
+
+
+
+#wrapper .contents section h1 {
+    font-size: 80px;
+    
+   
+}
+
+#wrapper .contents section h2 {
+    margin-top: 50%;
+}
+    
+    
+
+/*header*/
+.icon{
+    width: 10%;
+}
+
+/*section01*/
+img[src="images/slider/IMG_00.jpg"]{
+    width: 25%;
+    top: 45%;
+    left: 40%;
+}
+
+
+
+
+/*section02*/
+#ABOUT-inner{
+    margin-top: 30%;
+    text-align: center;
+    
+}
+
+#ABOUT-text{
+    width: 80%; 
+    
+}
+
+
+
+
+
+/*sectin03*/
+#Research-Activity-inner{
+    margin-top: 20%;
+}
+#Research-Activity-text{
+    font-size: 20px;
+    text-align: start;
+    width: 90%;
+}
+
+.business-plan{
+  margin-top:30%;
+}
+
+
+
+
+
+
+/*section04*/
+.wrapper-card{
+    margin-top: 20%;
+}
+
+.card{
+  width: 13%;
+}
+
+/*section05*/
+ #wrapper .slider {
+    width: 450px;
+    text-align: center;
+}   
+    
+#wrapper .slider .arrow {        
+        top: 25%;
+}
+     
+
+/*section06*/
+.portfolio-inner{
+  margin-top: 25%;
+margin-left: auto;
+    margin-right: auto;
+}
+.concept-card img{
+    width: 40%;
+    margin-left: 10%;
+    margin-top: 10%;
+}
+
+.portfolio-site img{
+    width: 40%;
+    margin-right: 2%;
+    margin-top: 10%;
+}
+
+/*section07*/
+p.contact-text{
+   margin-left:auto;
+   margin-right: auto;
+    margin-top: 50%;  
+} 
+    
+}
+    
+
+
+
+
+
+
+/*タブレット用のcss(小)650*/
+@media(max-width: 650px){
+ #wrapper {
+    position: absolute;
+    width: 120%; 
+    }
+    
+    
+    #section01, #section02 ,#section03,#section04,#section05,#section06,#section07{
+      text-align: center;
+      margin-top: 50%;
+      margin-bottom: 150%;
+         height: 150vh;
+      
+     
+       
+}
+
+
+
+#wrapper .contents section h1 {
+    font-size: 80px;
+    
+   
+}
+
+#wrapper .contents section h2 {
+    margin-top: 50%;
+}
+    
+    
+
+/*header*/
+.icon{
+    width: 10%;
+}
+
+/*section01*/
+img[src="images/slider/IMG_00.jpg"]{
+    width: 25%;
+    top: 45%;
+    left: 40%;
+}
+
+
+
+
+/*section02*/
+#ABOUT-inner{
+    margin-top: 30%;
+    text-align: center;
+    
+}
+
+#ABOUT-text{
+    width: 80%; 
+    
+}
+
+
+
+
+
+/*sectin03*/
+#Research-Activity-inner{
+    margin-top: 20%;
+}
+#Research-Activity-text{
+    font-size: 20px;
+    text-align: start;
+    width: 90%;
+}
+
+.business-plan{
+  margin-top:30%;
+}
+
+
+
+
+
+
+/*section04*/
+.wrapper-card{
+    margin-top: 20%;
+}
+
+.card{
+  width: 13%;
+}
+
+/*section05*/
+ #wrapper .slider {
+    width: 450px;
+    text-align: center;
+}   
+    
+#wrapper .slider .arrow {        
+        top: 25%;
+}
+     
+
+/*section06*/
+.portfolio-inner{
+  margin-top: 25%;
+margin-left: auto;
+    margin-right: auto;
+}
+.concept-card img{
+    width: 40%;
+    margin-left: 10%;
+    margin-top: 10%;
+}
+
+.portfolio-site img{
+    width: 40%;
+    margin-right: 2%;
+    margin-top: 10%;
+}
+
+/*section07*/
+p.contact-text{
+   margin-left:auto;
+   margin-right: auto;
+    margin-top: 50%;  
+} 
+       
+ 
+}
+
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*スマートフォン用のCSS 414px*/
+
+@media(max-width: 430px){
+     
+     #wrapper {
+    position: absolute;
+    width: 100%;  
+        
+}
+ 
+    
+    
+    
+   #section01, #section02 ,#section03,#section04,#section05,#section06,#section07{
+     height: 100vh;
+      width: 150%;
+      
+      
+       
+       
+      
+     
+}
+
+
+
+#wrapper .contents section h1 {
+    font-size: 80px;
+  
+   
+}
+
+#wrapper .contents section h2 {
+    width: 100%;
+  
+    margin-top: 50%;
+}
+    
+    
+
+/*header*/
+.icon{
+    width: 15%;
+}
+
+/*section01*/
+img[src="images/slider/IMG_00.jpg"]{
+    width: 25%;
+    top: 45%;
+    left: 40%;
+}
+
+
+
+
+/*section02*/
+#ABOUT-inner{
+    margin-top: 30%;
+    text-align: center;
+}
+
+#ABOUT-text{
+    width: 100%; 
+}
+
+
+
+
+
+/*sectin03*/
+#Research-Activity-inner{
+    margin-top: 20%;
+}
+#Research-Activity-text{
+    font-size: 20px;
+    text-align: start;
+    width: 90%;
+    line-height: 50px;
+}
+
+.business-plan{
+  margin-top:30%;
+}
+
+
+
+
+
+
+/*section04*/
+.wrapper-card{
+    margin-top: 20%;
+}
+
+.card{
+  width: 14%;
+}
+
+/*section05*/
+ #wrapper .slider {
+    width: 450px;
+    text-align: center;
+    
+     
+}   
+    
+#wrapper .slider .arrow {        
+        top: 25%;
+}
+     
+
+/*section06*/
+.portfolio-inner{
+  margin-top: 25%;
+margin-left: auto;
+    margin-right: auto;
+}
+.concept-card img{
+    width: 40%;
+    margin-left: 10%;
+    margin-top: 10%;
+}
+
+.portfolio-site img{
+    width: 40%;
+    margin-right: 2%;
+    margin-top: 10%;
+}
+
+/*section07*/
+p.contact-text{
+   margin-left:auto;
+   margin-right: auto;
+    margin-top: 50%;  
+}  
+    
+    
+ .footer-right p{
+   margin-right: 0px; 
+    }  
+
+    .twitter-share-button{
+        left: 0;
+        bottom: 0;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*スマートフォン用のCSS 375px*/
+
+@media(max-width: 375px){
+     
+     #wrapper {
+    position: absolute;
+    width: 120%;    
+}
+ 
+    
+    
+    
+   #section01, #section02 ,#section03,#section04,#section05,#section06,#section07{
+      height: 150vh;
+      width: 150%;
+       
+       
+      
+     
+}
+
+
+
+#wrapper .contents section h1 {
+    font-size: 80px;
+    width: 100%;
+    
+
+  
+   
+}
+
+#wrapper .contents section h2 {
+    width: 100%;
+  
+    margin-top: 50%;
+}
+    
+    
+
+/*header*/
+.icon{
+    width: 15%;
+}
+
+/*section01*/
+img[src="images/slider/IMG_00.jpg"]{
+    width: 25%;
+    top: 45%;
+    left: 40%;
+}
+
+
+
+
+/*section02*/
+#ABOUT-inner{
+    margin-top: 30%;
+    text-align: center;
+}
+
+#ABOUT-text{
+    width: 90%; 
+}
+
+
+
+
+
+/*sectin03*/
+#Research-Activity-inner{
+    margin-top: 20%;
+}
+#Research-Activity-text{
+    font-size: 20px;
+    text-align: start;
+    width: 90%;
+    line-height: 50px;
+}
+
+.business-plan{
+  margin-top:30%;
+}
+
+
+
+
+
+
+/*section04*/
+.wrapper-card{
+    margin-top: 20%;
+}
+
+.card{
+  width: 14%;
+}
+
+/*section05*/
+ #wrapper .slider {
+    width: 450px;
+    text-align: center;
+    
+     
+}   
+    
+#wrapper .slider .arrow {        
+        top: 25%;
+}
+     
+
+/*section06*/
+.portfolio-inner{
+  margin-top: 25%;
+margin-left: auto;
+    margin-right: auto;
+}
+.concept-card img{
+    width: 40%;
+    margin-left: 10%;
+    margin-top: 10%;
+}
+
+.portfolio-site img{
+    width: 40%;
+    margin-right: 2%;
+    margin-top: 10%;
+}
+
+/*section07*/
+p.contact-text{
+   margin-left:auto;
+   margin-right: auto;
+    margin-top: 50%;  
+}  
+    
+     
+}
+
+
+
+
+
+
+
+
+
+
+/*スマートフォン用のCSS 320px*/
+
+@media(max-width: 320px){
+  
+     
+     #wrapper {
+    position: absolute;
+    width: 130%;    
+}
+  #ABOUT-text{
+    width: 100%; 
+}     
+  
+    
+    
+}
+
+
+
+
+
+
+    
+
+
+
+    
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
